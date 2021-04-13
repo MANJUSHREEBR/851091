@@ -1,0 +1,139 @@
+
+    
+**********************************************
+manju@manju-virtualbox:~/Desktop/cmpe180a/Quiz6$ g++ clockType.cpp -o a
+manju@manju-virtualbox:~/Desktop/cmpe180a/Quiz6$ ./a
+clock1: 06:15:55
+clock2: 06:15:55
+both the clocks are equal
+07:16:56
+hours: 7
+minutes: 16
+seconds: 56
+
+******************************************************* q-2
+int main(){
+
+clockType clock1;
+clockType clock2(6,15,55);
+clock1.setTime(6,15,55);
+cout << "clock1: ";
+clock1.printTime();
+cout << "clock2: ";
+clock2.printTime();
+
+if(clock1.equalTime(clock2)){
+        cout << "both the clocks are equal" << endl;
+}
+else
+{
+        cout << "both the clocks are different" << endl;
+}
+clock1.incrementHours();
+clock1.incrementMinutes();
+clock1.incrementSeconds();
+clock1.printTime();
+int hours, minutes, seconds;
+clock1.getTime(hours,minutes,seconds);
+cout << "hours: " << hours << endl;
+cout << "minutes: " << minutes << endl;
+cout << "seconds: " << seconds << endl;
+
+return 0;
+}
+*******************************************************q-2
+int main(){
+
+clockType clock1;
+clockType clock2(6,15,55);
+clock1.setTime(6,15,55);
+cout << "clock1: ";
+clock1.printTime();
+cout << "clock2: ";
+clock2.printTime();
+
+if(clock1.equalTime(clock2)){
+        cout << "both the clocks are equal" << endl;
+}
+else
+{
+        cout << "both the clocks are different" << endl;
+}
+clock1.incrementHours();
+clock1.incrementMinutes();
+clock1.incrementSeconds();
+clock1.printTime();
+int hours, minutes, seconds;
+clock1.getTime(hours,minutes,seconds);
+cout << "hours: " << hours << endl;
+cout << "minutes: " << minutes << endl;
+cout << "seconds: " << seconds << endl;
+
+return 0;
+}
+******************************************************q-4
+kavya@manju-virtualbox:~/Desktop/cmpe180a/Quiz6$ g++ clockType.cpp -o a
+clockType.cpp: In function ‘int main()’:
+clockType.cpp:105:23: error: passing ‘const clockType’ as ‘this’ argument discards qualifiers [-fpermissive]
+ clock1.setTime(6,15,55);
+                       ^
+clockType.cpp:21:6: note:   in call to ‘void clockType::setTime(int, int, int)’
+ void clockType::setTime(int hours,int minutes,int seconds){
+      ^~~~~~~~~
+clockType.cpp:118:23: error: passing ‘const clockType’ as ‘this’ argument discards qualifiers [-fpermissive]
+ clock1.incrementHours();
+                       ^
+clockType.cpp:54:6: note:   in call to ‘void clockType::incrementHours()’
+ void clockType::incrementHours(){
+      ^~~~~~~~~
+clockType.cpp:119:25: error: passing ‘const clockType’ as ‘this’ argument discards qualifiers [-fpermissive]
+ clock1.incrementMinutes();
+                         ^
+clockType.cpp:59:6: note:   in call to ‘void clockType::incrementMinutes()’
+ void clockType::incrementMinutes(){
+      ^~~~~~~~~
+clockType.cpp:120:25: error: passing ‘const clockType’ as ‘this’ argument discards qualifiers [-fpermissive]
+ clock1.incrementSeconds();
+                         ^
+clockType.cpp:67:6: note:   in call to ‘void clockType::incrementSeconds()’
+ void clockType::incrementSeconds(){
+      ^~~~~~~~~
+************************************************************* q-4
+kavya@manju-virtualbox:~/Desktop/cmpe180a/Quiz6$ g++ clockType.cpp -o a
+kavya@manju-virtualbox:~/Desktop/cmpe180a/Quiz6$ ./a
+clock1: 00:00:00
+clock2: 06:15:55
+both the clocks are different
+hours: 0
+minutes: 0
+seconds: 0
+*************************************************************************q-3
+int main(){
+
+const clockType clock1;
+const clockType clock2(6,15,55);
+
+cout << "clock1: ";
+clock1.printTime();
+cout << "clock2: ";
+clock2.printTime();
+
+if(clock1.equalTime(clock2)){
+        cout << "both the clocks are equal" << endl;
+}
+else
+{
+        cout << "both the clocks are different" << endl;
+}
+
+int hours, minutes, seconds;
+clock1.getTime(hours,minutes,seconds);
+cout << "hours: " << hours << endl;
+cout << "minutes: " << minutes << endl;
+cout << "seconds: " << seconds << endl;
+
+return 0;
+}
+************************************************************************q-3
+
+
